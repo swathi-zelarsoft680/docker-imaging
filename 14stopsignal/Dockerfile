@@ -1,3 +1,3 @@
 FROM        ubuntu
 STOPSIGNAL  SIGINT
-CMD         ["sleep", "1"]
+CMD         ["sleep", "100"]
