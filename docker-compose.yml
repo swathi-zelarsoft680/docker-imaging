@@ -1,8 +1,32 @@
 version: "3.9"
 services:
-  web:
-    image: "nginx"
-    container_name: web
+  frontend:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/frontend
+    container_name: frontend
+    ports:
+    - "80:80"
+  cart:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/cart
+    container_name: cart
+  catalogue:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/catalogue
+    container_name: catalogue
+  user:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/user
+    container_name: user
+  shipping:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/shipping
+    container_name: shipping
+  payment:
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/payment
+    container_name: payment
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  mongodb:
+    image: mongodb
+  rabbitmq:
+    image: rabbitmq
   redis:
-    image: "nginx"
-    container_name: redis
+    image: redis
