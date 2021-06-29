@@ -1,24 +1,24 @@
 version: "3.9"
 services:
   frontend:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/frontend
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/frontend:0.0.8
     container_name: frontend
     ports:
     - "80:80"
   cart:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/cart
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/cart:0.0.22
     container_name: cart
   catalogue:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/catalogue
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/catalogue:0.0.2
     container_name: catalogue
   user:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/user
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/user:0.0.3
     container_name: user
   shipping:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/shipping
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/shipping:0.0.4
     container_name: shipping
   payment:
-    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/payment
+    image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/payment:0.0.3
     container_name: payment
   mysql:
     image: mysql:5.7
