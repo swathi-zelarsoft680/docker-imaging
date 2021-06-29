@@ -2,5 +2,7 @@ version: "3.9"
 services:
   web:
     image: "nginx"
+    container_name: web
   redis:
     image: "redis:alpine"
+    container_name: redis
