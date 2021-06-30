@@ -32,6 +32,8 @@ services:
     container_name: shipping
     depends_on:
     - mysql
+    environment:
+      CART_ENDPOINT: "cart:8080"
   payment:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/payment:0.0.3
     container_name: payment
