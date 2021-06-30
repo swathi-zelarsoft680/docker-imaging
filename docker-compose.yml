@@ -5,21 +5,38 @@ services:
     container_name: frontend
     ports:
     - "80:80"
+    depends_on:
+    - cart
+    - catalogue
+    - user
+    - shipping
+    - payment
   cart:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/cart:0.0.22
     container_name: cart
+    depends_on:
+    - redis
   catalogue:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/catalogue:0.0.2
     container_name: catalogue
+    depends_on:
+    - mongodb
   user:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/user:0.0.3
     container_name: user
+    depends_on:
+    - mongodb
+    - redis
   shipping:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/shipping:0.0.4
     container_name: shipping
+    depends_on:
+    - mysql
   payment:
     image: 734529938452.dkr.ecr.us-east-1.amazonaws.com/payment:0.0.3
     container_name: payment
+    depends_on:
+    - rabbitmq
   mysql:
     image: mysql:5.7
     container_name: mysql
