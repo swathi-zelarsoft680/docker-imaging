@@ -28,6 +28,8 @@ services:
   mongodb:
     image: mongo
     container_name: mongo
+    volumes:
+    - /home/ubuntu/data/mongo:/data/db
   rabbitmq:
     container_name: rabbitmq
     image: rabbitmq
